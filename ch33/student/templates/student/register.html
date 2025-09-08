@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register page</title>
+    <style>
+           .custom-error-css{
+            color: rebeccapurple;
+           }
+            .errorlist{
+            color: green;
+           }
+    </style>
+ 
+</head>
+<body>
+    <h1>Register page:</h1>
+
+        <form action="" method="POST" novalidate>
+        {% csrf_token %}
+       
+        <div>
+           {{form.as_p}} 
+        </div>
+          
+        
+        <button>submit</button>
+        </form>
+
+
+
+    {% comment %} <form action="" method="POST" novalidate>
+        {{form.non_field_errors}}
+        {% csrf_token %}
+        {% for field in form %}
+        <div>
+            {{field.label_tag}} {{field}}
+
+            {% for error in field.errors  %}
+                <span class="custom-error-css"> {{error}} </span>
+            {% endfor %}
+            
+        </div>
+          
+        {% endfor %}
+        <button>submit</button>
+    </form> {% endcomment %}
+
+
+
+
+
+
+  
+
+
+
+    
+</body>
+</html>

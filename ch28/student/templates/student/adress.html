@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adress-page</title>
+</head>
+<body>
+    <h1>Here are adress page:</h1>
+
+    <form action="">
+        {% for field in form  %}
+        <label for="{{field.id_for_label}}">{{field.label}}</label>
+
+        <input 
+      type="{{ field.field.widget.input_type }}" 
+            name="{{ field.name }}" 
+            id="{{ field.id_for_label }}" 
+            value="{{ field.value|default_if_none:'' }}" 
+            placeholder="{{ field.field.widget.attrs.placeholder|default:'' }}" 
+            {% if field.field.required %}required{% endif %} 
+        >
+        {% endfor %}
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'account/base.html' %}
+{% block title %}Seller Dashboard{% endblock title %}
+{% block content %}
+  <h1>Seller Dashboard</h1>
+
+  <hr>
+
+    <ul>
+    <li><a href="{% url 'product_list' %}">Prouduct list </a></li>
+    <li><a href="{% url 'product_add' %}">Prouduct add </a></li>
+  </ul>
+{% endblock content %}
