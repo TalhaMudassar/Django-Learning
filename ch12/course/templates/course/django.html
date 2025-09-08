@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Filters</title>
+</head>
+<body>
+    {% comment %} <h1>Filters Examples</h1>
+
+    <!-- Basic filters from earlier -->
+    <h2>Uppercase: {{ name|upper }}</h2>
+    <h2>Lowercase: {{ name|lower }}</h2>
+    <h2>Title Case: {{ name|title }}</h2>
+    <h2>Capfirst: {{ name|capfirst }}</h2>
+    <h2>Length: {{ name|length }}</h2>
+    <h2>Default: {{ name|default:"guest" }}</h2>
+    <h2>Default if none: {{ name|default_if_none:"guest" }}</h2>
+    <h2>Truncatechars: {{ string1|truncatechars:20 }}</h2>
+    <h2>Date: {{ current_date|date:"d-m-Y" }}</h2>
+
+    <!-- 2.12 timesince -->
+    <h2>Timesince: {{ post_date|timesince }}</h2>
+
+    <!-- 2.13 timeuntil -->
+    <h2>Timeuntil: {{ event_date|timeuntil }}</h2>
+
+    <!-- 2.14 add -->
+    <h2>Add: {{ price|add:10 }}</h2>
+
+    <!-- 2.15 divisibleby -->
+    {% if counter|divisibleby:2 %}
+        <p>Divisibleby: {{ counter }} is Even number</p>
+    {% else %}
+        <p>Odd number</p>
+    {% endif %}
+
+    <!-- 2.16 join -->
+    <h2>Join: {{ courses|join:", " }}</h2>
+
+    <!-- 2.17 slice -->
+    <h2>Slice (first 2 courses): {{ courses|slice:":2" }}</h2>
+
+    <!-- 2.18 safe -->
+    <h2>Safe: {{ html_content|safe }}</h2>
+
+    <!-- 2.19 escape -->
+    <h2>Escape: {{ html_content|escape }}</h2>
+
+    <!-- 2.20 pluralize -->
+    <h2>Pluralize: {{ count }} item{{ count|pluralize }}</h2>
+
+    <!-- 2.21 yesno -->
+    <h2>Yesno: {{ is_active|yesno:"Active,Inactive" }}</h2>
+
+    <!-- 2.22 floatformat -->
+    <h2>Floatformat: {{ float_price|floatformat:2 }}</h2>
+
+    <!-- 3. Chaining filters -->
+    <h2>Chaining filters: {{ name|default:"Guest"|upper }}</h2>
+
+    <h1>current_date {{current_date|date}}<h1/>
+    <h1>current_date {{current_date|date:'D d M Y'}}<h1/>
+    <h1>current_Time {{current_date|time}}<h1/>
+    <h1>current_Time {{current_date|time:"H:i"}}<h1/>
+    <h1>short date formaat :  {{current_date|date:'SHORT_DATE_FORMAT'}}<h1/>
+    <h1>Time_FORMAT {{current_date|time:'TIME_FORMAT'}}<h1/>
+    
+    {% comment %}  if else tag {% endcomment %}
+    {% comment %} {% if vari == 'django' %}
+    <h1>Hello: {{vari}} : you easily gets in html document. <h1/>
+    {% elif vari == 'django1' %}
+    <h1>Hello: {{vari}} : you easily gets in html document.<h1/>
+    {% else %}
+    <h1>nOTHING WE CAN GET <h1/>
+    {% endif %}  {% endcomment %} 
+
+{% comment %} <h1>For loop</h1>
+{% for i in names %}
+<ul> {{i}} </ul>
+{% endfor %} {% endcomment %}
+
+{% comment %} <h2> {{student.stu1.name}} </h2> {% endcomment %}
+
+{% comment %} 
+<h3> {{students}} </h3> 
+{% for key,value in students.items %}
+{{key}} - {{value}} <br />
+{% endfor %} {% endcomment %}
+
+<h3>{{student}}</h3>
+{% for key, value in student.items %}
+    {{key}} - {{value}}<br />
+    {% for k, v in value.items %}
+        {{k}} - {{v}}<br />
+    {% endfor %}
+{% endfor %}
+
+</body>
+</html>

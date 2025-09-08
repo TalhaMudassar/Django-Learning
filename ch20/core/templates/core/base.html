@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+
+    {% include 'core/components/navbar.html' %}
+    <hr>
+
+    <ul>
+        <li>    <a href="{% url 'home' %}">Home</a> </li>
+        <li>    <a href="{% url 'about' %}">About</a> </li>
+        <li>    <a href="{% url 'learn_python' %}">Python</a> </li>
+        <li>    <a href="{% url 'learn_django' %}">Django</a> </li>
+    </ul>
+
+
+
+{% block hero %}{% endblock hero %}
+<br>    
+{% block contents %}{% endblock contents %}
+<br>
+{% block footer %}Default Footer{% endblock footer %}
+<br>
+</body>
+</html>

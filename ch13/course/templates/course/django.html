@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'course\css\style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1> {{nm}}  welcome to learn django with statics files </h1>
+    <img src="{% static 'course\images\pic1.jpg' %}" alt="" width="100px" height="100px">
+    <img src="{% get_static_prefix %}course\images\pic1.jpg" alt="" width="300px" height="300px">
+    <form action="">
+        <input type="button" value="click me :" onclick="disp()"/>
+    </form>
+    <script src="{% static  'course\js\scripts.js'%}"></script>
+    
+</body>
+</html>

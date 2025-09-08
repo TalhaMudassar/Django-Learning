@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+
+{% block title %}Home{% endblock title %}
+
+{% block hero %}
+{% include 'core/components/hero.html' %}
+{% endblock hero %}
+    
+
+{% block contents %}Home page content section
+{{cour}}
+{% include 'core/components/coufile.html' %}
+{% endblock contents %}
+
+{% block footer %}Home page footer section {% endblock footer %}

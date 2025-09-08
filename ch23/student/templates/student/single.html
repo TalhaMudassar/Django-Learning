@@ -1,0 +1,24 @@
+<!-- some times we need single data to display  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+</head>
+<body>
+    <h1>Single Student Data: </h1>
+    {% if studentsingle %}
+    <h1>
+        {{studentsingle.name}}--{{studentsingle.email}}--{{studentsingle.city}}
+    </h1>
+
+    {% else %}
+    <h1>NO DATA</h1>
+    {% endif %}
+
+
+    
+</body>
+</html>

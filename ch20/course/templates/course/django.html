@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+
+{% block title %}Django{% endblock title %}
+
+{% block hero %}django page hero section{% endblock hero %}
+    
+
+{% block contents %} 
+django page content section
+
+{% include 'core/components/coufile.html' with cour='knowledgeddd' %}
+<hr>
+{% include 'core/components/coufile.html' with cour='knowledgeddd' only %}
+
+{% endblock contents %}
+

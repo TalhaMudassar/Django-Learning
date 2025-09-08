@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%load static %}
+    {% load static tailwind_tags %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}"> 
+    <title> {% block title %} {% endblock title %} </title>
+    {% tailwind_css %}
+</head>
+<body>
+    {% block hero %}{% endblock hero %}
+    {% block footer %} Default footer {% endblock footer %}
+
+</body>
+</html>

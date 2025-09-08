@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}{% endblock title %}
+    
+    {% block corecss %} <link rel="stylesheet" href="{% static 'core/css/style.css'%}"> {% endblock corecss %}
+</head>
+<body>
+    {% block hero %}{% endblock hero %}
+    {% block footer %} <h1>This is default footer</h1> {% endblock footer %} 
+    
+    
+</body>
+</html>
