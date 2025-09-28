@@ -131,3 +131,14 @@ AUTH_USER_MODEL = 'account.User'
 #here write site name and domain name 
 SITE_DOMAIN = 'http://127.0.0.1:8000'
 SITE_NAME = 'Auth System'
+
+
+
+# --- Email (Mailtrap SMTP) ---------------------------------------------------
+# ⚠️ In production, use env vars for secrets.
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailtrap.io'   # 
+EMAIL_HOST_USER = '3c434cc48688d8'
+EMAIL_HOST_PASSWORD = 'fbd7e417830a6a'
+EMAIL_PORT = 2525
+EMAIL_USE_TLS = True
