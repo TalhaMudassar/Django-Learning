@@ -142,3 +142,11 @@ EMAIL_HOST_USER = '3c434cc48688d8'
 EMAIL_HOST_PASSWORD = 'fbd7e417830a6a'
 EMAIL_PORT = 2525
 EMAIL_USE_TLS = True
+
+
+# --- Auth redirects -----------------------------------------------------------
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_URL = 'login'
+
+# --- Password reset token expiry (seconds) -----------------------------------
+PASSWORD_RESET_TIMEOUT = 3600  # 1 hour

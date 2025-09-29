@@ -26,3 +26,21 @@ class RegistrationForm(forms.ModelForm):
                 raise forms.ValidationError(
                     "A user with this email already exists.")
             return email
+        
+        
+        
+class PassswordResetForm(forms.Form):
+    email = forms.EmailField(
+        max_length=255,
+        required=True,
+        widget=forms.EmailInput(attrs={'placeholder':'you@example.com'})
+    )
+    
+    def clean_email(self):
+        email= self.cleaned_data.get('email')
+        # check a user if it exists with the email
+        if not User.objects.filter(email= email).exists():
+            raise forms.ValidationError(
+                ('No account is associated with this email address.')
+            )
+        return email
